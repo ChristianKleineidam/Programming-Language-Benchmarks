@@ -10,19 +10,12 @@ class Node {
       : Node._(null, null);
 
   int check() {
-    var r = 1;
-
-    final left = this.left;
-    if (left != null) {
-      r += left.check();
+    if (left == null) {
+      return 1;
     }
-
-    final right = this.right;
-    if (right != null) {
-      r += right.check();
+    else{
+      return 1 + right!.check() + left!.check();
     }
-
-    return r;
   }
 }
 
